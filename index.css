@@ -265,6 +265,52 @@ main .description h3 {
 }
 
 
+
+/*left, right moving button in slider*/
+.content-list .move-left {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  z-index: 20;
+  font-size: 3rem;
+  background: black ;
+  border: black 0.1rem solid;
+  border-radius: 10%;
+  color: white;
+  cursor: pointer;
+  opacity : 0.3;
+}
+.content-list .move-right {
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  z-index: 20;
+  font-size: 3rem;
+  background: black ;
+  border: black 0.1rem solid;
+  border-radius: 10%;
+  color: white;
+  cursor: pointer;
+  opacity : 0.3;
+}
+
+.move-right:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out; 
+}
+.move-left:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out; 
+}
+
+
+
+
+
+
+
+
+
 /**/
 footer {
   background-color: #111;

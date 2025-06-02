@@ -531,6 +531,28 @@ function createMovieItem(name, rank = null) {
   return item;
 }
 
+// left, right moving button in slider
+document.querySelectorAll('.move-left').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const type = btn.getAttribute('data-type');
+    const slider = document.querySelector(`.slider[data-type="${type}"]`);
+    slider.scrollTo({
+      left: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+
+document.querySelectorAll('.move-right').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const type = btn.getAttribute('data-type');
+    const slider = document.querySelector(`.slider[data-type="${type}"]`);
+    slider.scrollTo({
+      left: slider.scrollWidth,
+      behavior: 'smooth'
+    });
+  });
+});
 
 
 
