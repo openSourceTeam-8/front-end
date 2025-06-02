@@ -38,6 +38,13 @@ nav {
   display: flex;
   align-items: center;
 }
+.search-bar input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  font-size: 1rem;
+}
 .search .search-icon {
   width: 16px;
   height: 16px;
@@ -46,7 +53,7 @@ nav {
 .search .search-input {
   background-color: transparent;
   border: none;
-  color: white;
+  color: black;
   outline: none;
   font-size: 1rem;
 }
@@ -305,7 +312,125 @@ main .description h3 {
 
 
 
+/*poseter click 시 popup*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 1000;
+}
 
+.modal-content {
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  width: 90%;
+  height: auto;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-content img {
+  position: relative;
+  top: 0%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+
+.modal-details {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.modal-close {
+  position: sticky;
+  top: 0.5%;
+  left: 100%;
+  z-index: 10;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-down {
+  position: sticky;
+  top: 98%;
+  left: 100%;
+  z-index: 10;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-down:hover {
+  transition: all 0.3s ease-in-out; 
+  transform: scale(1.1);
+}
+
+#modal-reviews {
+  padding-left: 1.2rem;
+}
+
+#modal-reviews li {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  list-style-type: disc;
+  color: #ccc;
+}
+.modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.modal-meta p {
+  margin: 0;
+  flex: 1 1 40%;
+}
+.modal-rating {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: gold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+
+.modal-review-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 300px;
+  max-height: none;
+}
+#modal-reviews {
+  padding-left: 1rem;
+  margin: 0;
+}
 
 
 
