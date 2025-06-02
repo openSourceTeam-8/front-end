@@ -1,12 +1,223 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>SW-TeamProject</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <div id="app"></div>
+    <nav>
+        <div class="top">
+            <div class="logo">
+                <img src="./icon/logo.png" alt="로고" />
+                <h1>SW-TeamProject</h1>
+            </div>
+        </div>
+
+        <div class="top">
+            <div class="search">
+                <div class="search-bar">
+                    <img src="./icon/돋보기.jpg" alt="검색" class="search-icon" />
+                    <input type="text" id="search-input" placeholder="제목을 검색하세요" />
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="img">
+            <img id="main-movie-poster" src="./data/test.jpg">
+        </div>
+    </main>
+
+    <section>
+        <div class="content-list">
+            <h1>국가</h1>
+            <!--poster 정렬 x 축스크롤    -->
+            <div class="slider">
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+            </div>
+        </div>
+        <div class="content-list">
+            <h1>장르</h1>
+
+            <!--poster 정렬 x 축스크롤    -->
+            <div class="slider">
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+            </div>
+        </div>
+        <div class="content-list">
+
+            <h1>최근 개봉한 영화</h1>
+            <!--poster 정렬 x 축스크롤    -->
+            <div class="slider">
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+            </div>
+        </div>
+
+        <div class="content-list">
+
+            <h1>관람평 TOP 10 영화</h1>
+            <!--poster 정렬 x 축스크롤    -->
+            <div class="slider">
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+                <div class="item">
+                    <img src="./data/test.jpg" alt="test" >
+                </div>
+            </div>
+
+
+    </section>
+    <footer>
+        <p>&copy; 2025 SW-TeamProject : Movie Review Site</p>
+
+        <ul class="footer-links">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+
+    </footer>
+
     <script src="index.js"></script>
 </body>
+
 </html>
