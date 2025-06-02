@@ -91,13 +91,59 @@ main .img img {
   display: block;
   margin: 0 auto;
 }
+main .img img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+main .description {
+  position: absolute;
+  bottom: 30%;
+  left: 40px;
+  max-width: 500px;
+}
+main .description h1 {
+  margin: 0.5em 0;
+}
+main .description h3 {
+  margin: 0.5em 0;
+}
+.description p {
+  white-space: pre-line;
+  font-size: 1rem;
+  line-height: 1.5;
+}
 
+
+
+
+/*포스터 필터링 */
+
+.filter-select {
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); 
+  border: 1px solid #888;
+  outline: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.filter-select:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.75); 
+}
+
+.filter-select option {
+  background-color: black;
+  color: white;
+}
 
 
 
 
 /*포스터 정렬*/
-
 .content-list {
   margin-bottom: 3rem;
   position: relative;
@@ -138,9 +184,85 @@ main .img img {
   display: block;
   border-radius: 10px;
 }
+.slider .item::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0); 
+  transition: background-color 0.3s ease-in-out;
+}
+
+.slider .item:hover::after {
+  background-color: rgba(0, 0, 0, 0.3); 
+  }
+
+.slider .item:hover img {
+  transform: scale(1.0); 
+}
+.item:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
 
 
+/*top raing index*/
+.with-rank {
+  position: relative;
+  min-width: 280px;
+  height: 270px;
+  border-radius: 8px;
 
+  padding-left: 100px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+.rank-number {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-20%, -50%);
+  font-size: 8rem;
+  font-weight: 900;
+  color: #141414;
+  -webkit-text-stroke: 2px #ccc;
+  width: 100px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/*poster hovering 시 관련 정보보*/
+.item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.85);
+  color: white;
+  padding: 1em;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5em;
+  font-size: 0.85rem;
+  z-index: 2; 
+  border-radius: 10px;
+}
+
+.item:hover .item-overlay {
+  display: flex;
+}
 
 
 /**/

@@ -27,183 +27,64 @@
     </nav>
 
     <main>
-        <div class="img">
-            <img id="main-movie-poster" src="./data/test.jpg">
-        </div>
+<div class="img">
+      <img id="main-movie-img" src="test.jpg">
+    </div>
+    <div class="description">
+      <h1 id="main-title">Movie Title</h1>
+      <h3 id="main-cast">출연진</h3>
+      <p id="main-review">리뷰</p>
+    </div>
     </main>
 
     <section>
         <div class="content-list">
-            <h1>국가</h1>
-            <!--poster 정렬 x 축스크롤    -->
-            <div class="slider">
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-            </div>
-        </div>
-        <div class="content-list">
-            <h1>장르</h1>
+            <h1>국가
+                <select class="filter-select country-filter">
+                    <option value="all">전체</option>
+                    <option value="한국">한국</option>
+                    <option value="미국">미국</option>
+                    <option value="영국">영국</option>
+                    <option value="프랑스">프랑스</option>
+                    <option value="스페인">스페인</option>
+                </select>
+            </h1>
+            <div class="slider" data-type="country"></div>
 
             <!--poster 정렬 x 축스크롤    -->
-            <div class="slider">
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-            </div>
+
         </div>
+        <div class="content-list">
+            <h1>장르
+                <select class="filter-select genre-filter">
+                    <option value="all">전체</option>
+                    <option value="범죄">범죄</option>
+                    <option value="액션">액션</option>
+                    <option value="드라마">드라마</option>
+                    <option value="모험">모험</option>
+                </select>
+            </h1>
+            <div class="slider" data-type="genre"></div>
+
+            <!--poster 정렬 x 축스크롤    -->
+        </div>
+       <div class="content-list">
+
+            <h1>관람평 TOP 10 영화</h1>
+      <div class="slider" data-type="top"></div>
+
+            <!--poster 정렬 x 축스크롤    -->
+        </div>
+
         <div class="content-list">
 
             <h1>최근 개봉한 영화</h1>
+      <div class="slider" data-type="recent"></div>
+
             <!--poster 정렬 x 축스크롤    -->
-            <div class="slider">
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-            </div>
         </div>
 
-        <div class="content-list">
-
-            <h1>관람평 TOP 10 영화</h1>
-            <!--poster 정렬 x 축스크롤    -->
-            <div class="slider">
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-                <div class="item">
-                    <img src="./data/test.jpg" alt="test" >
-                </div>
-            </div>
+ 
 
 
     </section>

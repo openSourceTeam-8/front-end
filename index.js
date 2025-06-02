@@ -406,3 +406,155 @@ const movieList = {
 }
 }
 
+
+
+const sliders = document.querySelectorAll('.slider');
+const moviename = Object.keys(movieList);
+let currentMainMovieName = '';
+
+// Main Poster는 난수를 통해 지정
+function displayRandomMovie() {
+  const movieKeys = Object.keys(movieList);
+  const randomKey = movieKeys[Math.floor(Math.random() * movieKeys.length)];
+  const movie = movieList[randomKey];
+  currentMainMovieName = randomKey;
+
+  const img = document.getElementById('main-movie-img');
+  const title = document.getElementById('main-title');
+  const cast = document.getElementById('main-cast');
+  const review = document.getElementById('main-review');
+
+  img.src = `./data/${randomKey}.jpg`;
+  img.alt = randomKey;
+  title.textContent = randomKey;
+
+  if (movie.cast) {
+    cast.textContent = `${movie.cast.slice(0, 3).join(', ')} 출연!`;
+  } else {
+    cast.textContent = "출연진 정보 없음";
+  }
+
+  if (movie["review of the audience"]) {
+    const reviews = movie["review of the audience"];
+    const randReview = reviews[Math.floor(Math.random() * reviews.length)];
+
+    const stars = '★'.repeat(randReview.rating) + '☆'.repeat(10 - randReview.rating);
+    review.textContent = `${stars} \n ${randReview.review}`;
+
+
+  } else {
+    review.textContent = "청중 평가 없음";
+  }
+}
+
+
+
+
+
+// GENRE, CONTRY FILTER
+function filterMoviesBy(type, value) {
+  return moviename.filter(name => {
+    const movie = movieList[name];
+    if (type === 'country') {
+      return value === 'all' || movie.contry.includes(value);
+    } else if (type === 'genre') {
+      return value === 'all' || movie.genre.includes(value);
+    }
+    return true;
+  });
+}
+// RATING TOP N, recent
+function sortMoviesBy(key, count = 10) {
+  return [...moviename].sort((a, b) =>
+    movieList[b][key] - movieList[a][key]
+  ).slice(0, count);
+}
+//contry
+document.querySelector('.country-filter').addEventListener('change', (e) => {
+  const value = e.target.value;
+  const container = document.querySelector('.slider[data-type="country"]');
+  const filtered = filterMoviesBy('country', value);
+  renderMovies(container, filtered);
+});
+//genre
+document.querySelector('.genre-filter').addEventListener('change', (e) => {
+  const value = e.target.value;
+  const container = document.querySelector('.slider[data-type="genre"]');
+  const filtered = filterMoviesBy('genre', value);
+  renderMovies(container, filtered);
+});
+
+
+//container에 item 추가, top rating에선, index 추가
+function renderMovies(container, movieNames) {
+  container.innerHTML = '';
+  const isTop = container.dataset.type === 'top';
+
+  movieNames.forEach((name, index) => {
+    const item = isTop
+      ? createMovieItem(name, index + 1)//rank = index+1
+      : createMovieItem(name);  
+    container.appendChild(item);
+  });
+}
+
+// SLIDER , OVERLAY
+function createMovieItem(name, rank = null) {
+  const movie = movieList[name];
+
+  const item = document.createElement('div');
+  item.className = 'item';
+  if (rank !== null) item.classList.add('with-rank');
+
+  if (rank !== null) {
+    const rankEl = document.createElement('div');
+    rankEl.className = 'rank-number';
+    rankEl.textContent = rank;
+    item.appendChild(rankEl);
+  }
+
+  const img = document.createElement('img');
+  img.src = `./data/${name}.jpg`;
+  img.alt = name;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'item-overlay';
+  overlay.innerHTML = `
+    <h2>${name}</h2>
+    <p><strong>장르:</strong> ${movie.genre?.join(', ') || '정보 없음'}</p>
+    <p><strong>출연:</strong> ${movie.cast?.join(', ') || '출연진 없음'}</p>
+    <p><strong>평점:</strong> ${movie.rating || 'N/A'}</p>
+  `;
+
+  item.appendChild(img);
+  item.appendChild(overlay);
+  return item;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+window.addEventListener('DOMContentLoaded', () => {
+  displayRandomMovie();
+
+
+  renderMovies(document.querySelector('.slider[data-type="country"]'), moviename);
+  renderMovies(document.querySelector('.slider[data-type="genre"]'), moviename);
+
+  const top10 = sortMoviesBy('rating');
+  renderMovies(document.querySelector('.slider[data-type="top"]'), top10);
+
+  const recent = sortMoviesBy('year',20);
+  renderMovies(document.querySelector('.slider[data-type="recent"]'), recent);
+});
+
