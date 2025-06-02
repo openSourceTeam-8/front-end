@@ -1,5 +1,4 @@
-// DATA SET
-const movieList = {
+{
   "밀수":{
     "contry": ["한국"],
     "year": 2023,
@@ -405,4 +404,3 @@ const movieList = {
   ]
 }
 }
-
