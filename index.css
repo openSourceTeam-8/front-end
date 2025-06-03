@@ -38,6 +38,13 @@ nav {
   display: flex;
   align-items: center;
 }
+.search-bar input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  font-size: 1rem;
+}
 .search .search-icon {
   width: 16px;
   height: 16px;
@@ -46,7 +53,7 @@ nav {
 .search .search-input {
   background-color: transparent;
   border: none;
-  color: white;
+  color: black;
   outline: none;
   font-size: 1rem;
 }
@@ -91,13 +98,59 @@ main .img img {
   display: block;
   margin: 0 auto;
 }
+main .img img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+main .description {
+  position: absolute;
+  bottom: 30%;
+  left: 40px;
+  max-width: 500px;
+}
+main .description h1 {
+  margin: 0.5em 0;
+}
+main .description h3 {
+  margin: 0.5em 0;
+}
+.description p {
+  white-space: pre-line;
+  font-size: 1rem;
+  line-height: 1.5;
+}
 
+
+
+
+/*포스터 필터링 */
+
+.filter-select {
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); 
+  border: 1px solid #888;
+  outline: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.filter-select:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.75); 
+}
+
+.filter-select option {
+  background-color: black;
+  color: white;
+}
 
 
 
 
 /*포스터 정렬*/
-
 .content-list {
   margin-bottom: 3rem;
   position: relative;
@@ -137,6 +190,246 @@ main .img img {
   object-fit: cover;
   display: block;
   border-radius: 10px;
+}
+.slider .item::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0); 
+  transition: background-color 0.3s ease-in-out;
+}
+
+.slider .item:hover::after {
+  background-color: rgba(0, 0, 0, 0.3); 
+  }
+
+.slider .item:hover img {
+  transform: scale(1.0); 
+}
+.item:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+
+/*top raing index*/
+.with-rank {
+  position: relative;
+  min-width: 280px;
+  height: 270px;
+  border-radius: 8px;
+
+  padding-left: 100px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+.rank-number {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-20%, -50%);
+  font-size: 8rem;
+  font-weight: 900;
+  color: #141414;
+  -webkit-text-stroke: 2px #ccc;
+  width: 100px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/*poster hovering 시 관련 정보보*/
+.item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.85);
+  color: white;
+  padding: 1em;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5em;
+  font-size: 0.85rem;
+  z-index: 2; 
+  border-radius: 10px;
+}
+
+.item:hover .item-overlay {
+  display: flex;
+}
+
+
+
+/*left, right moving button in slider*/
+.content-list .move-left {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  z-index: 20;
+  font-size: 3rem;
+  background: black ;
+  border: black 0.1rem solid;
+  border-radius: 10%;
+  color: white;
+  cursor: pointer;
+  opacity : 0.3;
+}
+.content-list .move-right {
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  z-index: 20;
+  font-size: 3rem;
+  background: black ;
+  border: black 0.1rem solid;
+  border-radius: 10%;
+  color: white;
+  cursor: pointer;
+  opacity : 0.3;
+}
+
+.move-right:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out; 
+}
+.move-left:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out; 
+}
+
+
+
+/*poseter click 시 popup*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 1000;
+}
+
+.modal-content {
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  width: 90%;
+  height: auto;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-content img {
+  position: relative;
+  top: 0%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+
+.modal-details {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.modal-close {
+  position: sticky;
+  top: 0.5%;
+  left: 100%;
+  z-index: 10;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-down {
+  position: sticky;
+  top: 98%;
+  left: 100%;
+  z-index: 10;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-down:hover {
+  transition: all 0.3s ease-in-out; 
+  transform: scale(1.1);
+}
+
+#modal-reviews {
+  padding-left: 1.2rem;
+}
+
+#modal-reviews li {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  list-style-type: disc;
+  color: #ccc;
+}
+.modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.modal-meta p {
+  margin: 0;
+  flex: 1 1 40%;
+}
+.modal-rating {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: gold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+
+.modal-review-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 300px;
+  max-height: none;
+}
+#modal-reviews {
+  padding-left: 1rem;
+  margin: 0;
 }
 
 
