@@ -575,6 +575,7 @@ function openMovieModal(movieName) {
 
   const reviewsContainer = document.getElementById('modal-reviews');
   reviewsContainer.innerHTML = '';
+  user_index=1
 
   if (movie["review of the audience"]) {
     const reviews = movie["review of the audience"];
@@ -584,16 +585,74 @@ function openMovieModal(movieName) {
 
       li.textContent = `무종이 ${index + 1}  ⭐ ${r.rating}점: ${shortReview}`;
       reviewsContainer.appendChild(li);
+      user_index=index+1
+
     });
   }
 
   review_movie = movieName
+  generateStars();
 
   modal.style.display = 'flex';
 }
+//start ui
+function generateStars(max = 10) {
+  const container = document.getElementById('star-rating');
+  container.innerHTML = '';
+
+  for (let i = 1; i <= max; i++) {
+    const star = document.createElement('span');
+    star.className = 'star';
+    star.textContent = '★';
+    star.dataset.value = i;
+
+    star.addEventListener('click', () => {
+      selectedRating = i;
+      StarUI(i);
+    });
+
+    star.addEventListener('mouseover', () => {
+      StarUI(i);  
+    });
+
+    star.addEventListener('mouseleave', () => {
+      StarUI(selectedRating); 
+    });
+
+    container.appendChild(star);
+  }
+}
+function StarUI(rating) {
+  const stars = document.querySelectorAll('.star-rating .star');
+  stars.forEach(star => {
+    star.classList.toggle('active', parseInt(star.dataset.value) <= rating);
+  });
+}
+//submit review (push movie-review)
+document.getElementById('submit-review').addEventListener('click', () => {
+    const reviewText = document.getElementById('user-review').value;
+
+    if (selectedRating === 0 || !reviewText.trim()) {
+      return;
+    }
+    user_index=user_index+1
+    const li = document.createElement('li');
+    const short = reviewText.length > 30 ? reviewText.slice(0, 30) + '...' : reviewText;
+    li.textContent = `무종이 ${user_index}  ⭐ ${selectedRating}점: ${short}`;
+
+    document.getElementById('modal-reviews').appendChild(li);
 
 
+    movieList[review_movie]["review of the audience"].push({
+      rating: selectedRating,
+      review: reviewText.trim()
+    });
 
+
+    document.getElementById('user-review').value = '';
+    selectedRating = 0;
+    StarUI(0);
+  });
 
 
 

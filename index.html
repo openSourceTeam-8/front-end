@@ -27,14 +27,14 @@
     </nav>
 
     <main>
-<div class="img">
-      <img id="main-movie-img" src="test.jpg">
-    </div>
-    <div class="description">
-      <h1 id="main-title">Movie Title</h1>
-      <h3 id="main-cast">출연진</h3>
-      <p id="main-review">리뷰</p>
-    </div>
+        <div class="img">
+            <img id="main-movie-img" src="test.jpg">
+        </div>
+        <div class="description">
+            <h1 id="main-title">Movie Title</h1>
+            <h3 id="main-cast">출연진</h3>
+            <p id="main-review">리뷰</p>
+        </div>
     </main>
 
     <section>
@@ -50,9 +50,10 @@
                 </select>
             </h1>
             <div class="slider" data-type="country"></div>
-       <button data-type="country" class="move-left"><</button>
-        <button data-type="country" class="move-right">></button>
-            <!--poster 정렬 x 축스크롤    -->
+            <button data-type="country" class="move-left">
+                <</button>
+                    <button data-type="country" class="move-right">></button>
+                    <!--poster 정렬 x 축스크롤    -->
 
         </div>
         <div class="content-list">
@@ -66,70 +67,84 @@
                 </select>
             </h1>
             <div class="slider" data-type="genre"></div>
-        <button data-type="genre" class="move-left" ><</button>
-        <button data-type="genre" class="move-right">></button>
-            <!--poster 정렬 x 축스크롤    -->
+            <button data-type="genre" class="move-left">
+                <</button>
+                    <button data-type="genre" class="move-right">></button>
+                    <!--poster 정렬 x 축스크롤    -->
         </div>
-       <div class="content-list">
+        <div class="content-list">
 
             <h1>관람평 TOP 10 영화</h1>
-      <div class="slider" data-type="top"></div>
-        <button data-type="top" class="move-left"><</button>
-        <button data-type="top" class="move-right">></button>
-            <!--poster 정렬 x 축스크롤    -->
+            <div class="slider" data-type="top"></div>
+            <button data-type="top" class="move-left">
+                <</button>
+                    <button data-type="top" class="move-right">></button>
+                    <!--poster 정렬 x 축스크롤    -->
         </div>
 
         <div class="content-list">
 
             <h1>최근 개봉한 영화</h1>
-      <div class="slider" data-type="recent"></div>
-        <button data-type="recent" class="move-left"><</button>
-        <button data-type="recent" class="move-right">></button>
+            <div class="slider" data-type="recent"></div>
+            <button data-type="recent" class="move-left">
+                <</button>
+                    <button data-type="recent" class="move-right">></button>
 
-            <!--poster 정렬 x 축스크롤    -->
+                    <!--poster 정렬 x 축스크롤    -->
         </div>
 
- 
+
 
 
     </section>
-  <div id="movie-modal" class="modal">
-    <div id="modal-content" class="modal-content">
-      <button id="modal-close" class="modal-close">×</button>
-      <button id="modal-down" class="modal-down">▽</button>
-
-      
-      <img id="modal-img" src="" alt="">
-      <div class="modal-details">
+    <div id="movie-modal" class="modal">
+        <div id="modal-content" class="modal-content">
+            <button id="modal-close" class="modal-close">×</button>
+            <button id="modal-down" class="modal-down">▽</button>
 
 
-        <h2 id="modal-title"></h2>
-        <div class="modal-meta">
-          <p id="modal-country"></p>
-          <p id="modal-year"></p>
-          <p id="modal-director"></p>
-          <p id="modal-age"></p>
-          <p id="modal-runtime"></p>
+            <img id="modal-img" src="" alt="">
+            <div class="modal-details">
+
+
+                <h2 id="modal-title"></h2>
+                <div class="modal-meta">
+                    <p id="modal-country"></p>
+                    <p id="modal-year"></p>
+                    <p id="modal-director"></p>
+                    <p id="modal-age"></p>
+                    <p id="modal-runtime"></p>
+                </div>
+                <p id="modal-cast"></p>
+                <p id="modal-genre"></p>
+                <p id="modal-description"></p>
+
+
+                <p id="modal-rating" class="modal-rating"></p>
+
+                <div class="modal-review-container">
+
+                    <ul id="modal-reviews"></ul>
+
+                    <div class="modal-review-form">
+                        <label>나의 별점:</label>
+                        <div id="star-rating" class="star-rating"></div>
+
+                        <label for="user-review">리뷰 작성:</label>
+                        <textarea id="user-review" placeholder="이 영화에 대한 리뷰를 남겨보세요"></textarea>
+                        <button id="submit-review">등록</button>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
         </div>
-        <p id="modal-cast"></p>
-        <p id="modal-genre"></p>
-        <p id="modal-description"></p>
-
-
-        <p id="modal-rating" class="modal-rating"></p>
-
-        <div class="modal-review-container">
-
-            <ul id="modal-reviews"></ul>
-
-          
-        </div>
-
-
-      </div>
-
     </div>
-  </div>
 
 
     <footer>
