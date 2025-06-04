@@ -412,6 +412,7 @@ const sliders = document.querySelectorAll('.slider');
 const moviename = Object.keys(movieList);
 const searchInput = document.getElementById('search-input');
 let currentMainMovieName = '';
+const scrollInterval = 0.8;
 
 // Main Poster는 난수를 통해 지정
 function displayRandomMovie() {
@@ -706,8 +707,10 @@ document.querySelectorAll('.move-left').forEach(btn => {
   btn.addEventListener('click', () => {
     const type = btn.getAttribute('data-type');
     const slider = document.querySelector(`.slider[data-type="${type}"]`);
+    let newScrollLeft = slider.scrollLeft - slider.clientWidth * scrollInterval;
+    if(newScrollLeft < 0) newScrollLeft = 0;
     slider.scrollTo({
-      left: 0,
+      left: newScrollLeft,
       behavior: 'smooth'
     });
   });
@@ -716,8 +719,11 @@ document.querySelectorAll('.move-right').forEach(btn => {
   btn.addEventListener('click', () => {
     const type = btn.getAttribute('data-type');
     const slider = document.querySelector(`.slider[data-type="${type}"]`);
+    let maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+    let newScrollLeft = slider.scrollLeft + slider.clientWidth * scrollInterval;
+    if(newScrollLeft > maxScrollLeft) newScrollLeft = maxScrollLeft;
     slider.scrollTo({
-      left: slider.scrollWidth,
+      left: newScrollLeft,
       behavior: 'smooth'
     });
   });
