@@ -609,6 +609,7 @@ function openMovieModal(movieName) {
   generateStars();
 
   modal.style.display = 'flex';
+  document.querySelector('.modal-content').scrollTop = 0;
 }
 //start ui
 function generateStars(max = 10) {
