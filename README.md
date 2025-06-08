@@ -1,6 +1,6 @@
 <div align="center">
 
-# 오픈소스SW개론 9조 영화 리뷰 플랫폼
+# 🎬오픈소스SW개론 9조 영화 리뷰 플랫폼🎬
 ![Image](https://github.com/user-attachments/assets/00ba6e29-c492-4914-9f06-df0151570422)
 
 </div> 
@@ -18,7 +18,7 @@
 
 ---
 ## 💻 화면 구성
-### 🎬메인페이지
+### ✨메인페이지
 |![Image](https://github.com/user-attachments/assets/9a073cea-50b5-40ca-bf1f-403abc4c95f1)|
 |:---:|
 랜덤으로 조회되는 영화 포스터 및 간략한 코멘트|
@@ -42,16 +42,16 @@
 |:---:|
 |![Image](https://github.com/user-attachments/assets/e1a255f5-b138-4380-8933-90aef562a6cb)|
 |개봉년도 기준 최신순으로 정렬된 영화 조회|
-### 🎬영화 상세 정보 페이지(리뷰 페이지)
+### ✨상세 정보 페이지(리뷰 페이지)
 #### 포스터 클릭 -> 영화 상세 정보 페이지(리뷰페이지)로 이동
-<img width="1857" alt="Image" src="https://github.com/user-attachments/assets/ea15dfbc-dcdb-428f-ae4b-f915fe80ca95" />
+<img width="1857" alt="Image" src="https://github.com/user-attachments/assets/eb563d21-feb5-46b4-bf4d-52a342791086"/>
 
 ---
 
 
 
 
-## ⚙️ 프로그램 기능 소개
+## 🛠️ 프로그램 기능 소개
 
 ### 1. **영화 조회 (포스터, 영화 제목)**
 
@@ -66,7 +66,8 @@
 ### 2. **영화 상세 정보 조회**
 |**포스터에 마우스 호버 시**, 간략한 영화 정보를 확인할 수 있습니다.|
 |:---:|
-|![Image](https://github.com/user-attachments/assets/a1eb36ab-fcfa-44d2-9a4e-9008e402ea3d)|
+|<img width="1857" alt="Image" src="https://github.com/user-attachments/assets/a1eb36ab-fcfa-44d2-9a4e-9008e402ea3d" />|
+
 
 |**포스터 클릭** 및 **영화 제목 검색** 시, |
 |:---:|
@@ -92,9 +93,18 @@
 
 |리뷰 등록 시 익명으로 등록됨|
 |:---:|
-|![image](https://github.com/user-attachments/assets/8936b0c2-f10b-410d-8a7b-af67fe21495b)|
+|<img width="1857" alt="Image" src=https://github.com/user-attachments/assets/8936b0c2-f10b-410d-8a7b-af67fe21495b/>|
 
 
+---
+
+---
+## ⚙️ 프로그램 실행 방법
+1. opensource-server-0.0.1-SNAPSHOT.jar 파일을 컴퓨터 바탕화면에 다운로드 합니다.
+2. cmd창에 `cd Desktop` 명령어를 입력합니다.
+3. 이어서 cmd창에 `java -jar opensource-server-0.0.1-SNAPSHOT.jar` 을 입력합니다.
+4. Chrome 주소창에 `http://localhost:8080/index.html`을 입력합니다.
+5. 영화 리뷰 플랫폼을 사용합니다.
 ---
 
 ## 💁‍♂️ 프로젝트 팀원
